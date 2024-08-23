@@ -67,35 +67,54 @@ export default function Home() {
     <div>
       <Navbar />
 
-      <div className="flex flex-row ">
-        <ul className=" flex flex-row justify-around gap-x-20 mt-10 mx-auto ">
-          <li className="items-center justify-center">
-            <h1>Admin</h1>
+      <div className="container mx-auto px-4 py-20 ">
+        <ul className="flex flex-wrap justify-center gap-8 md:gap-16">
+          <li className="flex flex-col items-center bg-blue-50 rounded-lg shadow-md p-6 transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
+            <img
+              className="w-48 h-48 object-cover rounded-full mb-4"
+              src="https://static.vecteezy.com/system/resources/previews/029/156/453/original/admin-business-icon-businessman-business-people-male-avatar-profile-pictures-man-in-suit-for-your-web-site-design-logo-app-ui-solid-style-illustration-design-on-white-background-eps-10-vector.jpg"
+              alt="admin"
+            />
+            <h1 className="text-xl font-semibold text-gray-800 mb-4">Admin</h1>
             <Link href="/admin">
               <button
-                className="bg-slate-600 rounded-md px-5 py-2 text-white "
+                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                 onClick={Handle__Admin__Login}
               >
                 Login
               </button>
             </Link>
           </li>
-          <li>
-            <h1>Supplier</h1>
+          <li className="flex flex-col items-center bg-red-50 rounded-lg shadow-md p-6 transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
+            <img
+              className="w-48 h-48 object-cover rounded-full mb-4"
+              src="https://www.shutterstock.com/image-vector/blood-donation-logo-design-vector-260nw-2233019493.jpg"
+              alt="supplier"
+            />
+            <h1 className="text-xl font-semibold text-gray-800 mb-4">
+              Supplier
+            </h1>
             <Link href="/supplier">
               <button
-                className="bg-slate-600 rounded-md px-5 py-2 text-white "
+                className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                 onClick={Handle__Supplier__Login}
               >
                 Login
               </button>
             </Link>
           </li>
-          <li>
-            <h1>Hospital</h1>
+          <li className="flex flex-col items-center bg-green-50 rounded-lg shadow-md p-6 transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
+            <img
+              className="w-48 h-48 object-cover rounded-full mb-4"
+              src="https://t4.ftcdn.net/jpg/08/06/24/89/360_F_806248978_nu3d6xllKaz07WJkRiiVxqvoJTEIGB8W.jpg"
+              alt="hospital"
+            />
+            <h1 className="text-xl font-semibold text-gray-800 mb-4">
+              Hospital
+            </h1>
             <Link href="/hospital">
               <button
-                className="bg-slate-600 rounded-md px-5 py-2 text-white "
+                className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                 onClick={Handle__Hospital__Login}
               >
                 Login

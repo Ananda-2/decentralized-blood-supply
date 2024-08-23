@@ -3,9 +3,9 @@ import { addPatientFunc } from "../javascript/web3/add_patient";
 
 export default function AddPatients() {
   const [formData, setFormData] = useState({
-    bloodId,
+    bloodId: 0,
     name: "",
-    age,
+    age:0,
     address: "",
     bloodGroup: "",
   });
@@ -30,9 +30,9 @@ export default function AddPatients() {
       formData.bloodGroup
     );
     setFormData({
-      bloodId,
+      bloodId:0,
       name: "",
-      age,
+      age:0,
       address: "",
       bloodGroup: "",
     });

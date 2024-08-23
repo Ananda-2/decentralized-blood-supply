@@ -6,8 +6,7 @@ async function addPatientFunc(
   _patient_name,
   _age,
   _address,
-  _blood_group,
-  _donated_time
+  _blood_group
 ) {
   await contractConnection();
   let accounts = await getAccounts();
@@ -16,7 +15,7 @@ async function addPatientFunc(
     _patient_name,
     _age,
     _address,
-    _blood_group,
+    _blood_group
   );
 }
 export { addPatientFunc };

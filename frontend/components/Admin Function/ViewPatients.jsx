@@ -41,13 +41,15 @@ const viewPatients = () => {
             </thead>
             <tbody>
               {bloodDetails.map((item, index) => (
+                item[2] >= 0 ? 
                 <tr key={index} className="bg-white border-b hover:bg-gray-50">
                   <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{item[0]}</td>
                   <td className="px-6 py-4">{Number(item[1])}</td>
                   <td className="px-6 py-4">{item[2]}</td>
                   <td className="px-6 py-4">{item[3]}</td>
                   <td className="px-6 py-4">{Number(item[4])}</td>
-                </tr>
+                </tr> :
+                <></>
               ))}
             </tbody>
           </table>

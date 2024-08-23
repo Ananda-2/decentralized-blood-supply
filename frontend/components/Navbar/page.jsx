@@ -2,51 +2,42 @@ import Link from "next/link";
 import { getAccounts } from "../javascript/web3/metamask_connection";
 
 export default async function Navbar() {
-  // const account = await getAccounts() ;
+  // const account = await getAccounts();
   return (
-    <div>
-      <div className="flex flex-row justify-between px-10 py-5 bg-black text-white ">
-        <Link href="/">
-          <h1>BloodBank Data</h1>
-        </Link>
-
-        <div className="flex justify-around items-center h-full">
-          <ul className="hidden md:flex gap-x-6 ">
-            <li>
-              <Link href="/">
-                <p>Home</p>
-              </Link>
-            </li>
-            <li>
-              <Link href="/services">
-                <p>Blood Units</p>
-              </Link>
-            </li>
-            <li>
-              <Link href="/Suppliers">
-                <p>Suppliers</p>
-              </Link>
-            </li>
-            <li>
-              <Link href="/Hospitals">
-                <p>Hospitals</p>
-              </Link>
-            </li>
-            <li>
-              <Link href="/Track_Blood">
-                <p>Track Blood</p>
-              </Link>
-            </li>
-            <li>
-              <Link href="/contacts">
-                {/* <p>{account}</p> */}
-              </Link>
-            </li>
-          </ul>
+    <nav className="bg-gray-900 text-white shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex-shrink-0">
+            <Link
+              href="/"
+              className="font-bold text-xl hover:text-indigo-400 transition duration-300"
+            >
+              BloodBank Data
+            </Link>
+          </div>
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              <NavLink href="/">Home</NavLink>
+              <NavLink href="/services">Blood Units</NavLink>
+              <NavLink href="/Suppliers">Suppliers</NavLink>
+              <NavLink href="/Hospitals">Hospitals</NavLink>
+              <NavLink href="/Track_Blood">Track Blood</NavLink>
+              {/* <NavLink href="/contacts">{account}</NavLink> */}
+            </div>
+          </div>
         </div>
       </div>
+    </nav>
+  );
+}
 
-      {/* Login Part */}
-    </div>
+function NavLink({ href, children }) {
+  return (
+    <Link
+      href={href}
+      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300"
+    >
+      {children}
+    </Link>
   );
 }
