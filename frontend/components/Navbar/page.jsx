@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { getAccounts } from "../javascript/web3/metamask_connection";
 
-export default function Navbar() {
+export default async function Navbar() {
+  // const account = await getAccounts() ;
   return (
     <div>
       <div className="flex flex-row justify-between px-10 py-5 bg-black text-white ">
@@ -37,7 +39,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link href="/contacts">
-                <p>Account Number</p>
+                {/* <p>{account}</p> */}
               </Link>
             </li>
           </ul>

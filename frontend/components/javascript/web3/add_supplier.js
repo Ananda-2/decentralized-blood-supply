@@ -1,3 +1,4 @@
+'use server'
 import { contractConnection, bloodSupplyContract } from "./contract_connection";
 import { getAccounts } from "./metamask_connection";
 

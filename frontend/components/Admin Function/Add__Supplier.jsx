@@ -1,12 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Admin__Navbar from "@/components/Admin Navbar/page";
-import { contractConnection } from "@/components/javascript/web3/contract_connection";
-import { getAccounts } from "@/components/javascript/web3/metamask_connection";
-import { addHospitalFunc } from "@/components/javascript/web3/add_hospital";
+import { addSupplierFunc } from "@/components/javascript/web3/add_supplier";
 
-export default function Form() {
+export default function AddSupplier() {
   const [formData, setFormData] = useState({
     address: "",
     name: "",
@@ -21,27 +18,21 @@ export default function Form() {
     });
   };
 
-  async function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form data:", formData);
-    // // Add your form submission logic here
-    // await contractConnection() ;
-    // const CurrentAccount = await getAccounts() ;
-    const addedData = await addHospitalFunc(formData.address , formData.name , formData.number);
-    console.log(addedData);
-    Form.reset() ;
-  }
+    addSupplierFunc(formData.address, formData.name, formData.number);
+    Form.reset();
+  };
 
   return (
     <div>
-      <Admin__Navbar />
-
       <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded-md">
-        <h1 className="text-2xl font-bold mb-4">Add Hospital</h1>
+        <h1 className="text-2xl font-bold mb-4">Add Supplier</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="address" className="block text-gray-700">
-              Hospital Address :
+              Supplier Address :
             </label>
             <input
               type="text"
@@ -55,7 +46,7 @@ export default function Form() {
           </div>
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700">
-              Hospital Name :
+              Supplier Name :
             </label>
             <input
               type="text"

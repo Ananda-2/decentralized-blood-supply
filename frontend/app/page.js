@@ -1,5 +1,4 @@
 "use client";
-
 import Navbar from "@/components/Navbar/page";
 import Link from "next/link";
 import {
@@ -8,13 +7,10 @@ import {
 } from "@/components/javascript/web3/contract_connection";
 import { getAccounts } from "@/components/javascript/web3/metamask_connection";
 
-// Admin Login function
-
+// Admin Login function  
+import { account , isOwner } from "./Login/Admin_Login";
 async function Handle__Admin__Login(event) {
   event.preventDefault();
-  await contractConnection();
-  let account = await getAccounts();
-  const isOwner = await bloodSupplyContract.owner();
 
   console.log(bloodSupplyContract);
   if (account === isOwner) {
@@ -53,7 +49,6 @@ async function Handle__Hospital__Login(e) {
   const allSuppliers = await bloodSupplyContract.getDataOfHospitals();
   allSuppliers.forEach((supplier) => {
     console.log(supplier);
-    console.log(supplier[0]);
     console.log(account);
     if (supplier[0] === account) {
       window.location.href = "/hospital";

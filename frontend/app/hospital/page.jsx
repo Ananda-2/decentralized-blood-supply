@@ -23,7 +23,7 @@ export default function Form() {
     });
   };
 
-  async function handleSubmit(e) {
+   function handleSubmit(e) {
     e.preventDefault();
     console.log("Form data:", formData);
     // Add your form submission logic here

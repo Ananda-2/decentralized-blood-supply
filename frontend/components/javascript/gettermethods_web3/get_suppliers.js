@@ -14,9 +14,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       async function getSuppliersFunc() {
         await contractConnection();
         const accounts = await getAccounts();
-        const suppliers = await bloodSupplyContract.methods
-          .getDataOfSuppliers()
-          .call({ from: accounts[0] });
+        const suppliers = await bloodSupplyContract.getDataOfSuppliers();
 
         try {
           // Make a POST request to a Rails endpoint

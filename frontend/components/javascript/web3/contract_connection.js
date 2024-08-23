@@ -4,20 +4,17 @@ import { ethers } from "ethers";
 
 let bloodSupplyContract;
 async function contractConnection() {
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
-  const signer = provider.getSigner();
-   bloodSupplyContract = new ethers.Contract(
-    "0xb872fa15507E58A181A34BB431256CcBC565a68F",
-    ABI,
-    signer
-  );
+  if (typeof window !== "undefined") {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    bloodSupplyContract = new ethers.Contract(
+      "0xb872fa15507E58A181A34BB431256CcBC565a68F",
+      ABI,
+      signer
+    );
+  }else{
+    console.log("first")
+  }
+
 }
 export { contractConnection, bloodSupplyContract };
-
-// const provider = new ethers.providers.Web3Provider(window.ethereum);
-// const signer = provider.getSigner();
-// const ContractInstances = new ethers.Contract(
-//   contract__Address,
-//   contract__Abi,
-//   signer
-// );

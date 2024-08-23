@@ -4,7 +4,7 @@ import { useState } from "react";
 import Supplier__Navbar from "@/components/supplier__Navbar/page";
 import { addDonorsFunc } from "@/components/javascript/web3/add_donors";
 
-export default function Form() {
+export default function Add__Supplier() {
   const [formData, setFormData] = useState({
     name: "",
     age: "",
@@ -22,10 +22,10 @@ export default function Form() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit =  (e) => {
     e.preventDefault();
     console.log("Form data:", formData);
-    await addDonorsFunc(
+    addDonorsFunc(
       formData.name,
       formData.age,
       formData.gender,
