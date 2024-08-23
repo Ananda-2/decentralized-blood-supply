@@ -9,8 +9,8 @@ async function connectToMetamask() {
         await provider.send("eth_requestAccounts", []); // <- this promps user to connect metamask
         const signer = provider.getSigner();
         accounts = await signer.getAddress();
-        console.log("All accounts aree ");
-        console.log(accounts);
+        // console.log("All accounts aree ");
+        // console.log(accounts);
         
       } catch (error) {
         console.error(error);

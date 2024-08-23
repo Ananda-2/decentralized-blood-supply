@@ -11,20 +11,12 @@ async function addPatientFunc(
 ) {
   await contractConnection();
   let accounts = await getAccounts();
-  await bloodSupplyContract.methods
-    .giveBloodToPatients(
-      _bloodId,
-      _patient_name,
-      _age,
-      _address,
-      _blood_group,
-      _donated_time
-    )
-    .send({ from: accounts[0] });
-  let event = await bloodSupplyContract.getPastEvents(
-    "eventBloodUsedByPatient",
-    {}
+  await bloodSupplyContract.giveBloodToPatients(
+    _bloodId,
+    _patient_name,
+    _age,
+    _address,
+    _blood_group,
   );
-  return event;
 }
 export { addPatientFunc };

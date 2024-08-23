@@ -11,6 +11,8 @@ async function getDataOfPatientsFunc() {
     let patients = await bloodSupplyContract.getDataOfPatients();
 
     console.log(patients);
+    if(patients.length > 0) return patients ;
+    else return [] ;
     
   } catch (error) {
     console.error(error);

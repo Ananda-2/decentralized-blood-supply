@@ -7,10 +7,13 @@ import {
 } from "@/components/javascript/web3/contract_connection";
 import { getAccounts } from "@/components/javascript/web3/metamask_connection";
 
-// Admin Login function  
-import { account , isOwner } from "./Login/Admin_Login";
+// Admin Login function
+
 async function Handle__Admin__Login(event) {
   event.preventDefault();
+  await contractConnection();
+  const account = await getAccounts();
+  const isOwner = await bloodSupplyContract.owner();
 
   console.log(bloodSupplyContract);
   if (account === isOwner) {
@@ -40,7 +43,6 @@ async function Handle__Supplier__Login(e) {
   console.log(allSuppliers);
 }
 
-
 async function Handle__Hospital__Login(e) {
   e.preventDefault();
   await contractConnection();
@@ -59,8 +61,6 @@ async function Handle__Hospital__Login(e) {
   if (flag === 0) alert("you are not a hospital");
   console.log(allSuppliers);
 }
-
-
 
 export default function Home() {
   return (
